@@ -9,9 +9,9 @@ import { FaLightbulb, FaBolt, FaHeart, FaAward, FaCode, FaCoffee, FaDatabase, Fa
 const About = () => {
   // Memoizar datos estáticos para evitar re-creación
   const stats = useMemo(() => [
-    { number: '2025', label: 'Egresado', icon: FaAward },
-    { number: 'Intermedio', label: 'Backend C# .NET', icon: FaCode },
-    { number: 'Intermedio', label: 'SQL Server', icon: FaDatabase },
+    { number: '2025', label: 'Egresado UPN', icon: FaAward },
+    { number: 'C# .NET', label: 'Backend Developer', icon: FaCode },
+    { number: 'SQL Server', label: 'Base de Datos', icon: FaDatabase },
     { number: '5', label: 'Certificaciones', icon: FaLightbulb },
   ], []);
 
