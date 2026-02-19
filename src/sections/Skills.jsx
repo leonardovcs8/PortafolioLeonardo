@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaDesktop, FaServer, FaCog, FaAward, FaExternalLinkAlt, FaStar, FaChartBar, FaNetworkWired } from 'react-icons/fa';
+import { FaDesktop, FaServer, FaCog, FaAward, FaStar, FaChartBar, FaNetworkWired } from 'react-icons/fa';
 import { 
   FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaPython, FaGitAlt, FaJava, FaPhp, FaDatabase
 } from 'react-icons/fa';
@@ -68,24 +68,10 @@ const Skills = () => {
       transition={{ delay: index * 0.1 }}
       whileHover={{ y: -5, scale: 1.02 }}
     >
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-3">
-          <skill.icon className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-          <span className="font-semibold text-gray-900 dark:text-white">{skill.name}</span>
+      <div className="flex items-center justify-center gap-3">
+        <skill.icon className="w-8 h-8 text-gray-700 dark:text-gray-300" />
+        <span className="font-semibold text-lg text-gray-900 dark:text-white">{skill.name}</span>
       </div>
-        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">{skill.levelText}</span>
-      </div>
-      
-      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
-        <motion.div
-          className={`h-full bg-gradient-to-r ${skill.color} rounded-full relative`}
-          initial={{ width: 0 }}
-          animate={{ width: `${skill.level}%` }}
-          transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
-        </motion.div>
-    </div>
     </motion.div>
   );
 
@@ -259,14 +245,6 @@ const Skills = () => {
                   <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{cert.title}</h4>
                   <p className="text-blue-600 dark:text-blue-400 font-semibold mb-3">{cert.provider}</p>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{cert.description}</p>
-                  
-                  <motion.button
-                    className="mt-4 inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors"
-                    whileHover={{ x: 5 }}
-                  >
-                    Ver certificado
-                    <FaExternalLinkAlt className="w-4 h-4" />
-                  </motion.button>
                 </motion.div>
               );
             })}
