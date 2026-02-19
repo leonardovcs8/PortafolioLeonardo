@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaArrowDown } from 'react-icons/fa';
+import profileImage from '../assets/profile/leonardo.jpg';
 
 /**
  * Sección Hero - Presentación principal del portafolio
@@ -204,14 +205,11 @@ const Hero = () => {
             <div className="relative">
               {/* Main avatar */}
               <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600 dark:from-blue-400 dark:via-purple-400 dark:to-blue-500 rounded-3xl flex items-center justify-center shadow-2xl relative overflow-hidden p-4">
-                {/* Coloca tu imagen aquí */}
                 <img 
-                  src="/assets/profile/leonardo.jpg" 
+                  src={profileImage} 
                   alt="Leonardo Valenzuela"
                   className="w-full h-full object-contain rounded-2xl"
                 />
-                {/* Si no tienes imagen aún, se mostrará el gradiente con iniciales */}
-                {/* <span className="relative z-10 text-white text-6xl font-bold">LV</span> */}
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-transparent pointer-events-none"></div>
               </div>
               
