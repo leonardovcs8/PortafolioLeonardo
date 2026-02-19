@@ -206,7 +206,7 @@ const Hero = () => {
               <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600 dark:from-blue-400 dark:via-purple-400 dark:to-blue-500 rounded-3xl flex items-center justify-center shadow-2xl relative overflow-hidden p-4">
                 {/* Coloca tu imagen aquí */}
                 <img 
-                  src="/src/assets/profile/leonardo.jpg" 
+                  src="/assets/profile/leonardo.jpg" 
                   alt="Leonardo Valenzuela"
                   className="w-full h-full object-contain rounded-2xl"
                 />

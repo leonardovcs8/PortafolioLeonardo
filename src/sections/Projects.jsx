@@ -13,7 +13,7 @@ const Projects = () => {
       id: 1,
       title: 'eCommerce Textiles Codecor',
       description: 'Tienda web de cortinas con arquitectura moderna frontend-backend. Catálogo de productos, personalización de cortinas, selección de telas y diseño responsive.',
-      image: '/src/assets/projects/codecor.png',
+      image: '/assets/projects/codecor.png',
       technologies: ['React', 'Vite', 'Tailwind CSS', 'JavaScript', 'API REST'],
       category: 'fullstack',
       liveUrl: 'https://textilescodecor.netlify.app/',
@@ -24,7 +24,7 @@ const Projects = () => {
       id: 2,
       title: 'Sistema de Reservas - Albergue San Francisco',
       description: 'Sistema web para visualización de habitaciones y gestión de reservas. Interfaz clara, diseño responsive y estructura para reservas online.',
-      image: '/src/assets/projects/albergue.png',
+      image: '/assets/projects/albergue.png',
       technologies: ['React', 'JavaScript', 'CSS', 'Web App'],
       category: 'fullstack',
       liveUrl: 'https://alberguesanfrancisco.vercel.app/',
@@ -35,7 +35,7 @@ const Projects = () => {
       id: 3,
       title: 'Plataforma Educativa - Luis Braille',
       description: 'Sitio web institucional para centro educativo público en Lima. Información académica, programas educativos, contacto y navegación estructurada.',
-      image: '/src/assets/projects/luisbraille.png',
+      image: '/assets/projects/luisbraille.png',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Web Design'],
       category: 'frontend',
       liveUrl: 'https://www.luisbraille.edu.pe/',
@@ -74,7 +74,7 @@ const Projects = () => {
     }`}>
       {/* Project Image */}
       <div className="h-64 bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/30 dark:to-primary-800/30 flex items-center justify-center overflow-hidden p-4">
-        {project.image.startsWith('/src/assets') ? (
+        {project.image.startsWith('/assets') ? (
           <img 
             src={project.image} 
             alt={project.title}
