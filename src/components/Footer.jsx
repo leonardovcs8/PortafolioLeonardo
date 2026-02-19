@@ -119,13 +119,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-dark-800 dark:border-gray-800 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 dark:text-gray-500 text-sm mb-4 md:mb-0">
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            <p className="text-gray-400 dark:text-gray-500 text-sm">
               © {currentYear} Leonardo Valenzuela. Todos los derechos reservados.
             </p>
-            <div className="flex items-center space-x-6 text-sm text-gray-400 dark:text-gray-500">
-              <span>Hecho con ❤️ usando React & Tailwind CSS</span>
-            </div>
           </div>
         </div>
       </div>

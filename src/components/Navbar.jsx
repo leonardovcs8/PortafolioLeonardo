@@ -76,7 +76,7 @@ const Navbar = () => {
               onClick={() => scrollToSection('#home')}
               className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent hover:from-purple-600 hover:to-blue-600 dark:hover:from-purple-300 dark:hover:to-blue-300 transition-all duration-300"
             >
-              Leonardo V.
+              Leonardo Valenzuela
             </button>
           </motion.div>
 
