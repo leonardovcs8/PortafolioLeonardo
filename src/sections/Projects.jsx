@@ -25,10 +25,10 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Sistema de Reservas - Albergue San Francisco',
-      description: 'Sistema web para visualización de habitaciones y gestión de reservas. Interfaz clara, diseño responsive y estructura para reservas online.',
+      title: 'Albergue San Francisco - Adopción de Mascotas',
+      description: 'Plataforma web full stack para facilitar la adopción responsable de canes rescatados. Frontend con React y backend con C# .NET, gestión integral de mascotas y procesos de adopción.',
       image: albergueImg,
-      technologies: ['React', 'JavaScript', 'CSS', 'Web App'],
+      technologies: ['React', 'C# .NET', 'SQL Server', 'API REST'],
       category: 'fullstack',
       liveUrl: 'https://alberguesanfrancisco.vercel.app/',
       githubUrl: '#',
@@ -72,34 +72,47 @@ const Projects = () => {
   const featuredProjects = projects.filter(project => project.featured);
 
   const ProjectCard = ({ project, isFeatured = false }) => (
-    <div className={`bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${
-      isFeatured ? 'ring-2 ring-primary-200 dark:ring-primary-700' : ''
-    }`}>
+    <motion.div
+      className={`group bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 ${
+        isFeatured ? 'ring-2 ring-blue-400 dark:ring-blue-600' : ''
+      }`}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 1.02 }}
+    >
       {/* Project Image */}
-      <div className="h-64 bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900/30 dark:to-primary-800/30 flex items-center justify-center overflow-hidden p-4">
+      <div className="relative h-72 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-blue-900/30 dark:via-purple-900/30 dark:to-pink-900/30 flex items-center justify-center overflow-hidden p-6">
         {typeof project.image === 'string' && project.image.length === 2 ? (
-          <span className="text-6xl">{project.image}</span>
+          <span className="text-7xl group-hover:scale-110 transition-transform duration-500">{project.image}</span>
         ) : (
           <img 
             src={project.image} 
             alt={project.title}
-            className="w-full h-full object-contain rounded-lg"
+            className="w-full h-full object-contain rounded-2xl group-hover:scale-105 transition-transform duration-500"
           />
+        )}
+        
+        {/* Overlay on hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        
+        {/* Featured badge */}
+        {isFeatured && (
+          <div className="absolute top-4 right-4">
+            <span className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-bold rounded-full shadow-lg backdrop-blur-sm">
+              ⭐ DESTACADO
+            </span>
+          </div>
         )}
       </div>
       
       {/* Project Content */}
-      <div className="p-6">
-        <div className="flex items-center justify-between mb-3">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{project.title}</h3>
-          {isFeatured && (
-            <span className="px-2 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs font-medium rounded-full">
-              Destacado
-            </span>
-          )}
-        </div>
+      <div className="p-8">
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+          {project.title}
+        </h3>
         
-        <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+        <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
           {project.description}
         </p>
         
@@ -108,7 +121,7 @@ const Projects = () => {
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded-full"
+              className="px-3 py-1.5 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 border border-blue-200 dark:border-blue-700 text-blue-700 dark:text-blue-300 text-xs font-semibold rounded-full hover:scale-105 transition-transform duration-200"
             >
               {tech}
             </span>
@@ -120,12 +133,18 @@ const Projects = () => {
           href={project.liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full bg-primary-600 dark:bg-primary-500 text-white text-center text-sm py-3 rounded-lg hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors"
+          className="group/btn relative block w-full bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 text-white text-center font-semibold py-4 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
         >
-          Ver Demo
+          <span className="relative z-10 flex items-center justify-center gap-2">
+            Ver Demo
+            <svg className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </span>
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-500 dark:to-blue-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 
   return (
