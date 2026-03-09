@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaClock, FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaSpinner, FaCheck } from 'react-icons/fa';
+import { FaClock, FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaSpinner, FaCheck, FaWhatsapp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 /**
@@ -97,10 +97,10 @@ const Contact = () => {
       link: 'mailto:leovc143@gmail.com',
     },
     {
-      icon: <FaPhone className="w-6 h-6" />,
-      title: 'Teléfono',
+      icon: <FaWhatsapp className="w-6 h-6" />,
+      title: 'WhatsApp',
       value: '+51 977 849 402',
-      link: 'tel:+51977849402',
+      link: 'https://wa.me/51977849402',
     },
     {
       icon: <FaMapMarkerAlt className="w-6 h-6" />,
@@ -139,7 +139,10 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            <span className="text-primary-600 dark:text-primary-400">Contacto</span>
+            Ponte en{' '}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+              Contacto
+            </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             ¿Tienes un proyecto en mente? Me encantaría escuchar sobre él. 
@@ -159,9 +162,9 @@ const Contact = () => {
                   <a
                     key={index}
                     href={info.link}
-                    className="flex items-center space-x-4 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
+                    className="flex items-center space-x-4 p-5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-600/50 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="flex-shrink-0 w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center text-primary-600 dark:text-primary-400">
+                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white shadow-md">
                       {info.icon}
                     </div>
                     <div>
@@ -185,7 +188,7 @@ const Contact = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-white dark:bg-gray-800 rounded-lg shadow-sm flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:shadow-md transition-all duration-200"
+                    className="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50 rounded-xl shadow-sm flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-500 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                   >
                     {social.icon}
                   </a>
@@ -194,7 +197,7 @@ const Contact = () => {
             </div>
 
             {/* Additional Info */}
-            <div className="bg-primary-50 dark:bg-primary-900/20 rounded-lg p-6">
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-6 border border-blue-200/50 dark:border-blue-700/30">
               <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                 Tiempo de Respuesta
               </h4>
@@ -210,7 +213,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
+          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-gray-200/50 dark:border-gray-600/50">
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
               Envíame un Mensaje
             </h3>
@@ -312,7 +315,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-primary-600 dark:bg-primary-500 text-white text-lg py-4 rounded-lg hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 text-white text-lg py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center">

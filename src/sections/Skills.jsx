@@ -68,9 +68,20 @@ const Skills = () => {
       transition={{ delay: index * 0.1 }}
       whileHover={{ y: -5, scale: 1.02 }}
     >
-      <div className="flex items-center justify-center gap-3">
-        <skill.icon className="w-8 h-8 text-gray-700 dark:text-gray-300" />
-        <span className="font-semibold text-lg text-gray-900 dark:text-white">{skill.name}</span>
+      <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <skill.icon className="w-7 h-7 text-gray-700 dark:text-gray-300 flex-shrink-0" />
+          <span className="font-semibold text-base text-gray-900 dark:text-white">{skill.name}</span>
+        </div>
+        <span className={`text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap ${
+          skill.level >= 70
+            ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300'
+            : skill.level >= 50
+            ? 'bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300'
+            : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400'
+        }`}>
+          {skill.levelText}
+        </span>
       </div>
     </motion.div>
   );

@@ -2,7 +2,7 @@
  * Componente Footer - Pie de página del portafolio
  * @returns {JSX.Element} Componente Footer
  */
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp, FaMapMarkerAlt } from 'react-icons/fa';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -40,7 +40,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-dark-900 dark:bg-gray-950 text-white transition-colors duration-500">
+    <footer className="bg-gray-900 text-white transition-colors duration-500">
       <div className="container-custom">
         <div className="py-16">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -62,7 +62,7 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-dark-800 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 dark:text-gray-500 hover:text-primary-400 dark:hover:text-primary-300 hover:bg-primary-600 dark:hover:bg-primary-700 transition-all duration-200"
+                    className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-all duration-200"
                     aria-label={social.name}
                   >
                     {social.icon}
@@ -73,7 +73,7 @@ const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-semibold text-white dark:text-gray-100 mb-6">
+              <h3 className="text-lg font-semibold text-white mb-6">
                 Enlaces Rápidos
               </h3>
               <ul className="space-y-3">
@@ -81,7 +81,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-gray-300 dark:text-gray-400 hover:text-primary-400 dark:hover:text-primary-300 transition-colors duration-200 text-left"
+                      className="text-gray-400 hover:text-blue-400 transition-colors duration-200 text-left"
                     >
                       {link.name}
                     </button>
@@ -92,24 +92,24 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div>
-              <h3 className="text-lg font-semibold text-white dark:text-gray-100 mb-6">
+              <h3 className="text-lg font-semibold text-white mb-6">
                 Contacto
               </h3>
               <div className="space-y-3">
-                <div className="flex items-center text-gray-300 dark:text-gray-400">
-                  <FaEnvelope className="w-4 h-4 mr-3 text-primary-400 dark:text-primary-300" />
-                  <a href="mailto:leovc143@gmail.com" className="hover:text-primary-400 dark:hover:text-primary-300 transition-colors duration-200">
+                <div className="flex items-center text-gray-400">
+                  <FaEnvelope className="w-4 h-4 mr-3 text-blue-400" />
+                  <a href="mailto:leovc143@gmail.com" className="hover:text-blue-400 transition-colors duration-200">
                     leovc143@gmail.com
                   </a>
                 </div>
-                <div className="flex items-center text-gray-300 dark:text-gray-400">
-                  <FaPhone className="w-4 h-4 mr-3 text-primary-400 dark:text-primary-300" />
-                  <a href="tel:+51977849402" className="hover:text-primary-400 dark:hover:text-primary-300 transition-colors duration-200">
+                <div className="flex items-center text-gray-400">
+                  <FaWhatsapp className="w-4 h-4 mr-3 text-blue-400" />
+                  <a href="https://wa.me/51977849402" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-200">
                     +51 977 849 402
                   </a>
                 </div>
-                <div className="flex items-center text-gray-300 dark:text-gray-400">
-                  <FaMapMarkerAlt className="w-4 h-4 mr-3 text-primary-400 dark:text-primary-300" />
+                <div className="flex items-center text-gray-400">
+                  <FaMapMarkerAlt className="w-4 h-4 mr-3 text-blue-400" />
                   <span>Comas, Lima - Perú</span>
                 </div>
               </div>
@@ -118,9 +118,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-dark-800 dark:border-gray-800 py-6">
+        <div className="border-t border-gray-800 py-6">
           <div className="flex flex-col md:flex-row justify-center items-center">
-            <p className="text-gray-400 dark:text-gray-500 text-sm">
+            <p className="text-gray-500 text-sm">
               © {currentYear} Leonardo Valenzuela. Todos los derechos reservados.
             </p>
           </div>

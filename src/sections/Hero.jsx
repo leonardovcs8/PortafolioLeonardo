@@ -62,7 +62,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-500">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-500 pt-24">
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-20 -right-20 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
@@ -87,14 +87,23 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Greeting */}
-            <motion.div 
-              className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50 mb-6"
+            {/* Greeting + Available badge */}
+            <motion.div
+              className="flex flex-wrap justify-center lg:justify-start gap-3 mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <span className="text-sm font-medium text-blue-600 dark:text-blue-400">👋 ¡Hola! Bienvenido a mi portafolio</span>
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-blue-200/50 dark:border-blue-700/50">
+                <span className="text-sm font-medium text-blue-600 dark:text-blue-400">👋 ¡Hola! Bienvenido a mi portafolio</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 dark:bg-green-900/30 backdrop-blur-sm border border-green-300/60 dark:border-green-600/50">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                </span>
+                <span className="text-sm font-medium text-green-700 dark:text-green-400">Disponible para trabajar</span>
+              </div>
             </motion.div>
 
             {/* Main heading */}
@@ -161,6 +170,17 @@ const Hero = () => {
                   Contactar
                 </span>
               </button>
+
+              <a
+                href="/cv.pdf"
+                download="Leonardo_Valenzuela_CV.pdf"
+                className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-700 dark:text-gray-200 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-gray-300 dark:border-gray-600 rounded-xl hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <span className="flex items-center gap-2">
+                  <FaDownload className="w-5 h-5 group-hover:translate-y-0.5 transition-transform duration-300" />
+                  Descargar CV
+                </span>
+              </a>
             </motion.div>
 
             {/* Social links */}

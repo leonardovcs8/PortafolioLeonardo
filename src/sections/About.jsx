@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useMemo } from 'react';
-import { FaLightbulb, FaBolt, FaHeart, FaAward, FaCode, FaCoffee, FaDatabase, FaServer } from 'react-icons/fa';
+import { FaLightbulb, FaBolt, FaHeart, FaAward, FaCode, FaCoffee, FaDatabase, FaServer, FaMapMarkerAlt, FaEnvelope, FaGraduationCap } from 'react-icons/fa';
+import profileImage from '../assets/profile/leonardo.jpg';
 
 /**
  * Sección About - Información personal y profesional
@@ -146,38 +147,68 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Image placeholder - Optimizado */}
-          <motion.div 
+          {/* Profile Card */}
+          <motion.div
             className="relative px-4 lg:px-0 max-w-md mx-auto lg:max-w-none"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: "-50px" }}
           >
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 dark:from-blue-600 dark:via-purple-600 dark:to-pink-600 rounded-3xl shadow-2xl dark:shadow-blue-900/50 flex items-center justify-center relative overflow-hidden transition-all duration-500">
-                <div className="text-white text-6xl sm:text-7xl md:text-8xl font-bold relative z-10">
-                  👨‍💻
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl border border-gray-200/50 dark:border-gray-600/50 shadow-2xl p-8">
+              {/* Foto circular + badge disponible */}
+              <div className="flex flex-col items-center text-center mb-6">
+                <div className="relative mb-4">
+                  <img
+                    src={profileImage}
+                    alt="Leonardo Valenzuela"
+                    className="w-28 h-28 rounded-full object-cover border-4 border-white dark:border-gray-700 shadow-xl"
+                  />
+                  <span className="absolute bottom-1 right-1 flex h-5 w-5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-5 w-5 bg-green-500 border-2 border-white dark:border-gray-800"></span>
+                  </span>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/10 to-transparent dark:via-white/5"></div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">Leonardo Valenzuela</h3>
+                <p className="text-blue-600 dark:text-blue-400 font-medium text-sm mt-1">Desarrollador Backend · C# .NET</p>
+                <span className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 dark:bg-green-900/30 border border-green-300 dark:border-green-600 text-green-700 dark:text-green-400 text-xs font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                  Disponible para trabajar
+                </span>
               </div>
-              
-              {/* Floating decorative elements - Optimizadas con will-change */}
-              <motion.div 
-                className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-yellow-400 to-orange-500 dark:from-yellow-500 dark:to-orange-600 rounded-2xl flex items-center justify-center shadow-lg dark:shadow-orange-900/50 will-change-transform transition-all duration-500"
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", repeatType: "reverse" }}
-              >
-                <span className="text-base sm:text-lg md:text-xl">🚀</span>
-              </motion.div>
-              
-              <motion.div 
-                className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-green-400 to-blue-500 dark:from-green-500 dark:to-blue-600 rounded-2xl flex items-center justify-center shadow-lg dark:shadow-blue-900/50 will-change-transform transition-all duration-500"
-                animate={{ rotate: [0, -10, 10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1, repeatType: "reverse" }}
-              >
-                <span className="text-base sm:text-lg md:text-xl">💡</span>
-              </motion.div>
+
+              {/* Divider */}
+              <div className="border-t border-gray-200/70 dark:border-gray-700/70 mb-6" />
+
+              {/* Info rows */}
+              <div className="space-y-3 mb-6">
+                {[
+                  { icon: FaMapMarkerAlt, text: 'Comas, Lima — Perú 🇵🇪', color: 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' },
+                  { icon: FaGraduationCap, text: 'UPN · Ing. Sistemas · 2025', color: 'bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400' },
+                  { icon: FaEnvelope, text: 'leovc143@gmail.com', color: 'bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400' },
+                ].map(({ icon: Icon, text, color }) => (
+                  <div key={text} className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-300">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${color}`}>
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <span>{text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { value: '3+', label: 'Proyectos', color: 'text-blue-600 dark:text-blue-400' },
+                  { value: '10+', label: 'Tecnologías', color: 'text-purple-600 dark:text-purple-400' },
+                  { value: '5', label: 'Certs', color: 'text-green-600 dark:text-green-400' },
+                ].map((stat) => (
+                  <div key={stat.label} className="text-center p-3 bg-gray-50/80 dark:bg-gray-700/50 rounded-2xl">
+                    <div className={`text-2xl font-bold ${stat.color}`}>{stat.value}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>

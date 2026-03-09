@@ -158,7 +158,10 @@ const Projects = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Mis <span className="text-primary-600 dark:text-primary-400">Proyectos</span>
+            Mis{' '}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+              Proyectos
+            </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Una selección de proyectos que demuestran mis habilidades y experiencia en desarrollo web
@@ -189,10 +192,10 @@ const Projects = () => {
               <button
                 key={filter.key}
                 onClick={() => setActiveFilter(filter.key)}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+                className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                   activeFilter === filter.key
-                    ? 'bg-primary-600 dark:bg-primary-500 text-white shadow-lg'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400'
+                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                    : 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-md border border-gray-200/50 dark:border-gray-600/50'
                 }`}
               >
                 {filter.label}
@@ -210,12 +213,12 @@ const Projects = () => {
 
         {/* Call to Action */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20 rounded-2xl p-8">
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-3xl p-10 border border-blue-200/50 dark:border-blue-700/30">
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
               ¿Te interesa trabajar juntos?
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-              Estoy siempre abierto a nuevos proyectos y oportunidades. 
+            <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+              Estoy siempre abierto a nuevos proyectos y oportunidades.
               Si tienes una idea en mente, ¡hablemos!
             </p>
             <button
@@ -225,7 +228,7 @@ const Projects = () => {
                   element.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="bg-primary-600 dark:bg-primary-500 text-white text-lg px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-purple-600 hover:to-blue-600 text-white text-lg px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
             >
               Iniciar Proyecto
             </button>
