@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaArrowDown } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowDown } from 'react-icons/fa';
 import profileImage from '../assets/profile/leonardo.jpg';
 
 /**
@@ -171,16 +171,6 @@ const Hero = () => {
                 </span>
               </button>
 
-              <a
-                href="/cv.pdf"
-                download="Leonardo_Valenzuela_CV.pdf"
-                className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-gray-700 dark:text-gray-200 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-gray-300 dark:border-gray-600 rounded-xl hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                <span className="flex items-center gap-2">
-                  <FaDownload className="w-5 h-5 group-hover:translate-y-0.5 transition-transform duration-300" />
-                  Descargar CV
-                </span>
-              </a>
             </motion.div>
 
             {/* Social links */}
